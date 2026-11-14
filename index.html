@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr" class="h-full">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PP PRINTER & advertising - Accounting & ERP</title>
+<meta name="theme-color" content="#0b1220">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Manrope','Segoe UI','sans-serif']},colors:{brand:{50:'#eaf5fc',100:'#cfe8f8',500:'#1b8ad3',600:'#0f6fb5',700:'#0b5894',800:'#0a4575',900:'#0a2f52'}}}}}</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--ink:#0b1220;--line:#e3e8ef;--pri:#0f6fb5}
+body{font-family:Manrope,'Segoe UI',sans-serif;background:#f3f5f9;color:#1b2433;font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--pri);outline-offset:2px}
+.strip{display:flex;height:4px}.strip i{flex:1}.strip i:nth-child(1){background:#00aeef}.strip i:nth-child(2){background:#ec008c}.strip i:nth-child(3){background:#ffd400}.strip i:nth-child(4){background:#1b1b1b}
+.ip{width:100%;padding:9px 12px;font-size:13.5px;background:#fff;border:1px solid #d3dae5;border-radius:9px;outline:none;color:#0f172a;transition:border-color .15s,box-shadow .15s}
+.ip:hover{border-color:#b6c1d1}.ip:focus{border-color:var(--pri);box-shadow:0 0 0 3px rgba(15,111,181,.15)}
+.lb{display:block;margin-bottom:6px;font-size:12px;font-weight:700;color:#5b6779}
+.cd{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:20px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.cd h3{font-size:15px;font-weight:800;color:#0f172a}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 12px;border-radius:9px;font-size:12.5px;font-weight:700;transition:filter .15s,transform .1s}
+.bt:hover{filter:brightness(.94)}.bt:active{transform:scale(.97)}
+.tbw{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.tb{width:100%;min-width:520px;border-collapse:collapse;font-size:13px;text-align:left}
+.tb th{background:#f7f9fc;color:#5b6779;font-size:12px;font-weight:700;padding:10px 12px;white-space:nowrap;border-bottom:1px solid var(--line)}
+.tb td{padding:10px 12px;border-top:1px solid #eef1f6}.tb tbody tr:first-child td{border-top:0}
+.tb tbody tr:hover td{background:#f9fbfe}.tb .empty{color:#94a0b3;text-align:center;padding:28px}
+#side{background:var(--ink)}
+.ng{padding:16px 22px 6px;font-size:11px;font-weight:700;color:#66738a;letter-spacing:.04em}
+.nv{display:flex;align-items:center;gap:12px;margin:1px 10px;padding:9px 12px;border-radius:9px;font-size:13px;font-weight:600;color:#a9b4c6;cursor:pointer;transition:background .15s,color .15s}
+.nv:hover{background:rgba(255,255,255,.06);color:#fff}.nv.on{background:rgba(255,255,255,.1);color:#fff;box-shadow:inset 3px 0 0 #00aeef}
+.nv i{width:18px;text-align:center;font-size:14px}
+#modal{backdrop-filter:blur(3px)}
+@media print{aside,#mob,header,.strip,.no-print{display:none!important}
+#app,#main{height:auto!important;overflow:visible!important;display:block!important}
+body.pm #app{display:none!important}body:not(.pm) #modal{display:none!important}
+#modal{position:static!important;background:#fff!important;display:block!important;padding:0!important}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body class="h-full antialiased">
+<div id="toasts" class="fixed top-4 right-4 z-[100] flex flex-col gap-2 max-w-xs pointer-events-none no-print"></div>
+<div id="loading" class="fixed inset-0 bg-slate-950 z-50 flex flex-col justify-center items-center text-white">
+<div class="w-14 h-14 border-4 border-white border-t-transparent rounded-full animate-spin mb-4"></div>
+<h2 id="ls" class="text-lg font-bold text-center px-4">Cloud Database Connect Ho Raha Hai...</h2>
+<button id="lr" onclick="location.reload()" class="hidden mt-4 bg-white text-brand-700 font-bold px-5 py-2 rounded-lg">Dobara Koshish Karein</button></div>
+
+<div id="login" class="hidden min-h-screen bg-[#0b1220]">
+<div class="hidden lg:flex flex-1 flex-col justify-between p-12 text-white" style="background:radial-gradient(120% 90% at 0% 0%,#10345a 0%,#0b1220 60%)">
+<div class="flex items-center gap-3"><div class="w-11 h-11 rounded-xl bg-white text-[#0b1220] font-black flex items-center justify-center">PP</div><b class="text-lg">PP PRINTER &amp; Advertising</b></div>
+<div><h1 class="text-4xl font-extrabold leading-tight max-w-md">Bill se hisaab tak, sab kuch aik jagah.</h1><p class="mt-3 text-slate-400 max-w-md text-sm leading-relaxed">Sales, quotations, purchase, expenses, bank aur cash book. Sab devices par live sync.</p></div>
+<div class="strip w-40 rounded-full overflow-hidden"><i></i><i></i><i></i><i></i></div></div>
+<div class="flex-1 flex items-center justify-center p-6 bg-white lg:max-w-xl w-full">
+<div class="w-full max-w-sm"><div class="lg:hidden w-12 h-12 bg-brand-700 text-white rounded-xl flex items-center justify-center font-black mb-4">PP</div>
+<h2 class="text-2xl font-extrabold text-slate-900">Khush aamdeed</h2><p class="text-sm text-slate-500 mt-1 mb-6">Apne account mein login karein</p>
+<label class="lb">Username</label><input id="lu" placeholder="Username" class="ip mb-4" autocomplete="username">
+<label class="lb">Password</label><input id="lp" type="password" placeholder="Password" class="ip mb-6" autocomplete="current-password" onkeydown="if(event.key==='Enter')login()">
+<button onclick="login()" class="w-full py-3 bg-brand-700 hover:bg-brand-800 text-white font-bold rounded-xl transition">Login Karein</button></div></div></div>
+
+<div id="app" class="hidden h-screen overflow-hidden flex-col md:flex-row">
+<div id="mob" class="md:hidden bg-slate-900 text-white p-4 flex justify-between items-center">
+<b><i class="fa-solid fa-print"></i> PP PRINTERS</b>
+<button onclick="$('side').classList.toggle('hidden')" class="text-xl"><i class="fa-solid fa-bars"></i></button></div>
+<aside id="side" class="hidden md:flex fixed md:static inset-y-0 left-0 z-40 w-64 text-white flex-col h-full">
+<div class="strip"><i></i><i></i><i></i><i></i></div><div class="p-5 flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-white text-[#0b1220] flex items-center justify-center font-black">PP</div><div><div class="font-extrabold text-sm">PP PRINTERS</div><div class="text-[10px] text-slate-400 uppercase tracking-wider">Accounting & ERP</div></div></div>
+<ul id="menu" class="pb-3 flex-grow overflow-y-auto"></ul>
+<div class="p-4 border-t border-slate-800 bg-slate-900/60 space-y-3"><div id="sync" class="flex items-center gap-1.5 text-[11px] text-slate-400 font-semibold">Cloud check ho raha hai...</div><button class="w-full py-2 bg-slate-800 text-rose-400 hover:bg-rose-950 font-bold rounded-lg text-xs" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></div>
+</aside>
+<main id="main" class="flex-grow h-screen overflow-y-auto w-full">
+<div id="cb" class="hidden bg-red-600 text-white text-xs text-center p-2 font-bold"></div>
+<header class="bg-white/90 backdrop-blur sticky top-0 z-20 px-4 sm:px-8 py-3.5 border-b border-slate-200 flex justify-between items-center">
+<div><h2 id="pt" class="text-lg font-extrabold text-slate-900">Dashboard</h2><p id="dt" class="text-xs text-slate-500"></p></div>
+<span id="ub" class="font-semibold text-xs text-slate-700 bg-slate-100 px-3 py-2 rounded-full"></span></header>
+<div class="p-4 sm:p-6 md:p-8">
+<div id="view"></div></div></main></div>
+<div id="modal" class="hidden fixed inset-0 bg-black/50 justify-center items-center z-50 overflow-y-auto p-3"></div>
+
+<script>
+const $=id=>document.getElementById(id), val=id=>$(id).value;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const R=n=>'Rs '+(+n||0).toLocaleString(), today=()=>new Date().toISOString().slice(0,10), uid=()=>Date.now()+Math.floor(Math.random()*1000);
+const show=(id,on,d='flex')=>{const e=$(id);e.classList.toggle('hidden',!on);e.classList.toggle(d,on)};
+const blank=()=>({users:[{id:1,username:'admin',pass:'admin123',role:'Admin'}],customers:[],sales:[],quotations:[],customerPayments:[],purchases:[],supplierPayments:[],expenses:[],expenseCategories:['Home Expense','Office Expense','Mix Expense','Zakat'],bankTransfers:[],challans:[],bankSettings:{name:'Meezan Bank - PP Printers A/C',opening:0,cashOpening:0}});
+let db=null,cur=null,tab='dashboard',F=null,A=null;
+const hash=async s=>crypto.subtle?[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join(''):btoa(unescape(encodeURIComponent(s)));
+
+function notify(m){const e=document.createElement('div');e.className='pointer-events-auto flex items-center gap-2 px-4 py-3 rounded-xl shadow-xl text-white text-xs font-semibold bg-slate-800';e.innerHTML='<i class="fa-solid fa-circle-info"></i><span>'+esc(m)+'</span>';$('toasts').appendChild(e);setTimeout(()=>e.remove(),3500)}
+window.alert=m=>notify(m);
+const setSync=ok=>{const e=$('sync');if(e)e.innerHTML=ok?'<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="text-emerald-400">Cloud Active (sab devices synced)</span>':'<span class="w-2 h-2 rounded-full bg-rose-400"></span><span class="text-rose-400">Offline - cloud connect nahi</span>'};
+/* ---------- Cloud / Storage ---------- */
+async function load(d){
+ db=Object.assign(blank(),d||{});let ch=false;
+ for(const u of db.users){if(!u.id){u.id=uid();ch=true}if(u.pass){u.h=await hash(u.pass);delete u.pass;ch=true}}
+ if(ch)save();
+ show('loading',false);cur=db.users.find(u=>u.username===localStorage.pp_user)||null;
+ cur?start():show('login',true);
+}
+function local(){try{return JSON.parse(localStorage.pp_cloud_backup)}catch(e){return null}}
+function save(){const p=JSON.stringify(db);localStorage.pp_cloud_backup=p;
+ if(window.fb&&cloudOK)window.fb.setDoc(window.fb.ref,{payload:p,updatedAt:new Date().toISOString()}).catch(e=>{$('cb').innerText='Cloud save fail: '+(e.code||e.message);show('cb',true,'block')})}
+const commit=()=>{save();render()};
+let cloudOK=false;
+function cloudFail(m){setSync(0);const l=local();$('cb').innerText='Cloud connect nahi hai ('+m+') - nayi entries cloud mein save NAHI hongi!';show('cb',true,'block');
+ if(db)return;if(l)return load(l);
+ show('login',false);show('loading',true);$('ls').innerText='Cloud se connect nahi ho saka ('+m+')';show('lr',true,'block')}
+function startCloud(){window.fb.onSnapshot(window.fb.ref,s=>{
+ cloudOK=true;setSync(1);show('cb',false,'block');
+ if(db&&s.metadata.hasPendingWrites)return;
+ load(s.exists()&&s.data().payload?JSON.parse(s.data().payload):local())},e=>{cloudOK=false;cloudFail(e.code||'error')})}
+window.fb?startCloud():addEventListener('fbready',startCloud);
+setTimeout(()=>{if(!cloudOK)cloudFail('internet ya Firebase blocked')},8000);
+
+/* ---------- Auth ---------- */
+async function login(){const u=val('lu').trim(),h=await hash(val('lp').trim());
+ const f=db&&db.users.find(x=>x.username===u&&x.h===h);
+ if(!f)return alert('Ghalat Username ya Password!');
+ cur=f;localStorage.pp_user=f.username;start()}
+function logout(){cur=null;localStorage.removeItem('pp_user');show('app',false);show('login',true)}
+function start(){show('login',false);show('app',true);
+ $('ub').innerText=`${cur.role} (${cur.username})`;
+ const G=[['Overview',['dashboard']],['Sales',['customers','sales','quotations','challans','ledgers']],['Stock & Kharcha',['purchase','expenses']],['Accounts',['bank','tb','bs']],['System',['backup','users']]],ok=t=>!t[3]||cur.role==='Admin';
+ $('menu').innerHTML=G.map(([g,ids])=>{const L=ids.map(i=>TABS.find(t=>t[0]===i)).filter(ok);return L.length?`<li class="ng">${g}</li>`+L.map(t=>`<li data-t="${t[0]}" class="nv" onclick="go('${t[0]}')"><i class="fa-solid fa-${t[2]}"></i>${t[1]}</li>`).join(''):''}).join('');
+ $('dt').innerText=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ go(tab)}
+const TABS=[['dashboard','Dashboard','chart-pie'],['customers','Customer Directory','users'],['sales','Sales & Billing','file-invoice-dollar'],['quotations','Quotations','file-lines'],['challans','Delivery Challan','truck-fast'],['purchase','Purchase & Stock','boxes-stacked'],['expenses','Daily Expenses','wallet'],['bank','Bank & Cash Book','building-columns'],['ledgers','Customer Ledgers','book'],['tb','Trial Balance','scale-balanced'],['bs','Balance Sheet','chart-line'],['backup','Backup & Restore','database'],['users','Manage Users','user-shield',1]];
+function go(t){tab=t;SQ='';if(F&&F.k!==t&&t!=='sales'&&t!=='quotations'&&t!=='challans')F=null;
+ document.querySelectorAll('#menu .nv').forEach(li=>{const on=li.dataset.t===t;li.classList.toggle('on',on)});
+ $('pt').innerText=TABS.find(x=>x[0]===t)[1];$('side').classList.add('hidden');render();$('main').scrollTo(0,0)}
+function render(){if(!db||!cur)return;$('view').innerHTML=V[tab]()}
+
+/* ---------- Accounting engine ---------- */
+function entries(){const E=[],p=(d,t,x,m,a,k,id)=>E.push({d,t,x,m,a,k,id});
+ db.sales.forEach(s=>s.paid>0&&p(s.date,'Sale Receipt',`${s.customerName} - Inv #${s.id}`,s.mode==='Bank'?'Bank':'Cash',s.paid,'sales',s.id));
+ db.customerPayments.forEach(c=>p(c.date,'Customer Payment',c.customerName,c.mode,c.amount,'customerPayments',c.id));
+ db.purchases.filter(x=>x.mode!=='Credit').forEach(x=>p(x.date,'Purchase',`${x.supplier} - ${x.item}`,x.mode,-x.amount,'purchases',x.id));
+ db.supplierPayments.forEach(x=>p(x.date,'Supplier Payment',x.supplier,x.mode,-x.amount,'supplierPayments',x.id));
+ db.expenses.forEach(x=>p(x.date,'Expense',`${x.category} ${x.desc||''}`,x.mode,-x.amount,'expenses',x.id));
+ db.bankTransfers.forEach(x=>{const w=x.dir!=='deposit',t=w?'Bank se Cash Nikala':'Cash Bank mein Jama',n='Bank Transfer'+(x.note?' - '+x.note:'');
+  p(x.date,t,n,'Bank',w?-x.amount:x.amount,'bankTransfers',x.id);p(x.date,t,n,'Cash',w?x.amount:-x.amount,'bankTransfers',x.id)});
+ return E.sort((a,b)=>a.d.localeCompare(b.d))}
+function supMap(){const m={},g=s=>m[s]||(m[s]={p:0,d:0});
+ db.purchases.forEach(p=>{g(p.supplier).p+=p.amount;if(p.mode!=='Credit')g(p.supplier).d+=p.amount});
+ db.supplierPayments.forEach(s=>g(s.supplier).d+=s.amount);return m}
+function custT(n){const s=db.sales.filter(x=>x.customerName===n);
+ return{sales:s.reduce((a,x)=>a+x.grandTotal,0),paid:s.reduce((a,x)=>a+x.paid,0)+db.customerPayments.filter(x=>x.customerName===n).reduce((a,x)=>a+x.amount,0)}}
+function calc(){const b=db.bankSettings,k={cash:+b.cashOpening||0,bank:+b.opening||0};
+ entries().forEach(e=>k[e.m==='Bank'?'bank':'cash']+=e.a);
+ const sum=(a,f)=>a.reduce((s,x)=>s+f(x),0),op=sum(db.customers,c=>+c.opening||0);
+ k.sales=sum(db.sales,s=>s.grandTotal);k.purch=sum(db.purchases,p=>p.amount);k.exp=sum(db.expenses,e=>e.amount);
+ k.recv=op+k.sales-sum(db.sales,s=>s.paid)-sum(db.customerPayments,c=>c.amount);
+ k.pay=Object.values(supMap()).reduce((s,x)=>s+x.p-x.d,0);
+ k.cap=(+b.cashOpening||0)+(+b.opening||0)+op;k.profit=k.sales-k.purch-k.exp;return k}
+
+/* ---------- UI helpers ---------- */
+const inp=(id,l,t='text',v='',a='')=>`<div><label class="lb">${l}</label><input id="${id}" type="${t}" value="${esc(v)}" class="ip" ${a}></div>`;
+const sel=(id,l,o,v='',a='')=>`<div><label class="lb">${l}</label><select id="${id}" class="ip" ${a}>${o.map(x=>{const[p,q]=Array.isArray(x)?x:[x,x];return`<option value="${esc(p)}" ${p==v?'selected':''}>${esc(q)}</option>`}).join('')}</select></div>`;
+const card=(h,b,x='')=>`<div class="cd"><div class="flex justify-between items-center mb-4 gap-3"><h3>${h}</h3>${x}</div>${b}</div>`;
+const table=(h,r)=>`<div class="tbw"><table class="tb"><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${r.map(x=>`<tr>${x.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')||`<tr><td class="empty" colspan="${h.length}">Abhi koi record nahi</td></tr>`}</tbody></table></div>`;
+const acts=(c,id,x='')=>`<div class="flex gap-1 no-print">${x}<button title="Edit" class="bt bg-amber-100 text-amber-800" onclick="edit('${c}',${id})"><i class="fa-solid fa-pen"></i></button><button title="Delete" class="bt bg-red-100 text-red-700" onclick="del('${c}',${id})"><i class="fa-solid fa-trash"></i></button></div>`;
+let SQ='';const fq=x=>String(x).toLowerCase().includes(SQ.toLowerCase());
+const srch=()=>`<input id="sq" class="ip mb-3 sm:w-72" placeholder="Search..." value="${esc(SQ)}" oninput="SQ=this.value;render();const i=$('sq');i.focus();i.setSelectionRange(SQ.length,SQ.length)">`;
+const prn=`<button onclick="window.print()" class="bt bg-brand-600 text-white no-print"><i class="fa-solid fa-print"></i> Print / PDF</button>`;
+const btn=(t,f,c='bg-brand-600')=>`<button class="bt ${c} text-white !px-5 !py-2.5" onclick="${f}">${t}</button>`;
+const SI={'Total Sales':'file-invoice-dollar','Total Purchases':'boxes-stacked','Expenses':'wallet','Net Profit':'chart-line','Cash in Hand':'money-bill-wave','Bank Balance':'building-columns','Receivable':'hand-holding-dollar','Payable':'file-invoice'};
+const stat=(l,v,c)=>`<div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-3"><div class="w-11 h-11 rounded-lg bg-${c}/10 text-${c} flex items-center justify-center text-base shrink-0"><i class="fa-solid fa-${SI[l]||'coins'}"></i></div><div class="min-w-0"><div class="text-xs font-semibold text-slate-500 truncate">${l}</div><div class="text-lg font-extrabold text-slate-900 truncate">${R(v)}</div></div></div>`;
+function modal(h){$('modal').innerHTML=`<div class="bg-white p-5 rounded-xl w-full max-w-2xl my-auto">${h}</div>`;show('modal',true)}
+const closeModal=()=>show('modal',false);
+const printM=()=>{document.body.classList.add('pm');print();document.body.classList.remove('pm')};
+const btns=x=>`<div class="no-print flex gap-2 justify-center mt-4"><button class="bt bg-green-600 text-white" onclick="printM()"><i class="fa-solid fa-print"></i> Print / PDF</button>${x||''}<button class="bt bg-red-600 text-white" onclick="closeModal()">Close</button></div>`;
+const hdr=(t,m)=>`<div class="flex justify-between items-start pb-4 border-b-2 border-slate-900"><div class="flex gap-3 items-center"><div class="w-14 h-14 bg-slate-950 text-white rounded-2xl flex items-center justify-center font-black text-2xl">PP</div><div><b class="text-slate-900 text-lg">PP PRINTER & ADVERTISING</b><p class="text-[11px] text-slate-500">Digital Flex, Commercial Printing, 3D Signage & Branding</p><p class="text-[10px] text-slate-400">Karachi, Sindh, Pakistan</p></div></div><div class="text-right"><span class="inline-block px-3 py-1 bg-slate-900 text-white rounded-md font-bold text-xs tracking-wider">${t}</span><p class="text-xs text-slate-600 mt-2 leading-relaxed">${m}</p></div></div><div class="mb-4"></div>`;
+const itemsT=i=>table(['#','Item','Qty','Rate','Amount'],i.map((x,n)=>[n+1,esc(x.desc),x.qty,R(x.rate),R(x.amt)]));
+
+/* ---------- Tabs ---------- */
+const V={
+dashboard(){const k=calc();return`<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-5">${stat('Total Sales',k.sales,'blue-900')+stat('Total Purchases',k.purch,'green-600')+stat('Expenses',k.exp,'red-600')+stat('Net Profit',k.profit,'emerald-500')+stat('Cash in Hand',k.cash,'amber-500')+stat('Bank Balance',k.bank,'sky-600')+stat('Receivable',k.recv,'purple-500')+stat('Payable',k.pay,'orange-500')}</div>`+
+ card('Aakhri Transactions',table(['Tarikh','Kisam','Tafseel','Mode','Raqam'],entries().slice(-8).reverse().map(e=>[e.d,e.t,esc(e.x),e.m,`<b class="${e.a<0?'text-red-600':'text-green-700'}">${R(Math.abs(e.a))}</b>`])))},
+
+customers(){return card('Naya Customer',`<div class="grid md:grid-cols-3 gap-3 mb-3">${inp('c-n','Naam')+inp('c-p','Phone (923XXXXXXXXX)')+inp('c-o','Opening Balance (Udhaar)','number')}</div>${btn('Customer Save Karein','addCust()')}`)+
+ card('Customers List',srch()+table(['Naam','Phone','Opening','Action'],db.customers.filter(c=>fq(c.name+(c.phone||''))).map(c=>[`<b>${esc(c.name)}</b>`,esc(c.phone||'-'),R(c.opening),acts('customers',c.id)])))},
+
+sales(){return formTab('sales')+card('Tamam Sales & Bills',srch()+table(['Tarikh','Customer','Items','Mode','Kul','Paid','Baaki','Action'],db.sales.slice().reverse().filter(s=>fq(s.customerName+s.id)).map(s=>[s.date,`<b>${esc(s.customerName)}</b>`,esc(s.items.map(i=>i.desc).join(', ')),s.mode,`<b>${R(s.grandTotal)}</b>`,R(s.paid),`<span class="text-red-600">${R(s.grandTotal-s.paid)}</span>`,acts('sales',s.id,`<button class="bt bg-blue-100 text-blue-800" title="View/Print" onclick="invModal(db.sales.find(x=>x.id==${s.id}))"><i class="fa-solid fa-eye"></i></button><button class="bt bg-teal-100 text-teal-800" title="Delivery Challan" onclick="challan('sales',${s.id})"><i class="fa-solid fa-truck-fast"></i></button>`)])))},
+
+quotations(){return formTab('quotations')+card('Tamam Quotations',table(['Tarikh','Customer','Items','Kul','Action'],db.quotations.slice().reverse().map(q=>[q.date,`<b>${esc(q.customerName)}</b>`,esc(q.items.map(i=>i.desc).join(', ')),`<b>${R(q.grandTotal)}</b>`,acts('quotations',q.id,`<button class="bt bg-blue-100 text-blue-800" title="View/Print" onclick="quotModal(db.quotations.find(x=>x.id==${q.id}))"><i class="fa-solid fa-eye"></i></button><button class="bt bg-teal-100 text-teal-800" title="Delivery Challan" onclick="challan('quotations',${q.id})"><i class="fa-solid fa-truck-fast"></i></button><button class="bt bg-green-100 text-green-800" title="Invoice Banayein" onclick="toSale(${q.id})"><i class="fa-solid fa-file-invoice"></i></button>`)])))},
+
+challans(){return formTab('challans')+card('Tamam Delivery Challans',srch()+table(['Challan #','Tarikh','Customer','Items','Gaari No.','Action'],db.challans.slice().reverse().filter(c=>fq(c.customerName+c.no)).map(c=>[`<b>${c.no||c.id}</b>`,c.date,`<b>${esc(c.customerName)}</b>`,esc(c.items.map(i=>i.desc+' x'+i.qty).join(', ')),esc(c.vehicle||'-'),acts('challans',c.id,`<button class="bt bg-blue-100 text-blue-800" title="View/Print" onclick="challan('challans',${c.id})"><i class="fa-solid fa-eye"></i></button><button class="bt bg-green-100 text-green-800" title="Invoice Banayein" onclick="toSale(${c.id},'challans')"><i class="fa-solid fa-file-invoice"></i></button>`)])))},
+
+purchase(){const m=supMap(),sups=Object.keys(m);
+ return card('Maal Kharidne ki Entry',`<div class="grid md:grid-cols-6 gap-3 mb-3">${inp('p-s','Supplier','text','','list="sl"')}<datalist id="sl">${sups.map(s=>`<option value="${esc(s)}">`).join('')}</datalist>${inp('p-i','Material')+inp('p-q','Qty','number')+inp('p-r','Rate','number')+sel('p-m','Mode',['Cash','Bank','Credit'])+inp('p-d','Tarikh','date',today())}</div>${btn('Purchase Save Karein','addPurch()')}`)+
+ card('Supplier ko Payment',`<div class="grid md:grid-cols-4 gap-3 mb-3">${sel('s-s','Supplier',[['','-- Chunein --'],...sups])+inp('s-a','Raqam','number')+sel('s-m','Mode',['Cash','Bank'])+inp('s-d','Tarikh','date',today())}</div>${btn('Payment Save Karein','addSupPay()','bg-green-600')}`)+
+ card('Suppliers Ledger',table(['Supplier','Purchase','Paid','Baaki'],sups.map(s=>[`<b>${esc(s)}</b>`,R(m[s].p),R(m[s].d),`<b class="text-red-600">${R(m[s].p-m[s].d)}</b>`])))+
+ card('Purchases History',table(['Tarikh','Supplier','Item','Qty','Rate','Amount','Mode','Action'],db.purchases.slice().reverse().map(p=>[p.date,esc(p.supplier),esc(p.item),p.qty,p.rate,`<b>${R(p.amount)}</b>`,p.mode,acts('purchases',p.id)])))+
+ card('Supplier Payments History',table(['Tarikh','Supplier','Raqam','Mode','Action'],db.supplierPayments.slice().reverse().map(p=>[p.date,esc(p.supplier),`<b>${R(p.amount)}</b>`,p.mode,acts('supplierPayments',p.id)])))},
+
+expenses(){return card('Expense Folders (Category)',`<div class="flex flex-wrap gap-2 mb-3">${db.expenseCategories.map((c,i)=>`<span class="bg-blue-50 border border-blue-200 text-brand-700 text-xs font-bold px-3 py-1.5 rounded-full">${esc(c)} <button onclick="editCat(${i})" class="text-amber-600 mx-1"><i class="fa-solid fa-pen"></i></button><button onclick="delCat(${i})" class="text-red-600"><i class="fa-solid fa-xmark"></i></button></span>`).join('')}</div><div class="flex gap-3">${`<input id="nc" placeholder="Naye folder ka naam" class="ip">`+btn('Add','addCat()')}</div>`)+
+ card('Rozmarra ke Kharchay',`<div class="grid md:grid-cols-5 gap-3 mb-3">${sel('x-c','Folder',db.expenseCategories)+inp('x-d','Tafseel')+inp('x-a','Raqam','number')+sel('x-m','Mode',['Cash','Bank'])+inp('x-t','Tarikh','date',today())}</div>${btn('Expense Save Karein','addExp()','bg-red-600')}`)+
+ card('Expenses History',table(['Tarikh','Category','Details','Mode','Raqam','Action'],db.expenses.slice().reverse().map(e=>[e.date,`<b>${esc(e.category)}</b>`,esc(e.desc||'-'),e.mode,`<b class="text-red-600">${R(e.amount)}</b>`,acts('expenses',e.id,`<button class="bt bg-blue-100 text-blue-800" onclick="voucher(${e.id})"><i class="fa-solid fa-eye"></i></button>`)])),prn)},
+
+bank(){const k=calc(),b=db.bankSettings;
+ return card('Bank & Cash Settings',`<div class="grid md:grid-cols-3 gap-3 mb-3">${inp('b-n','Bank Name','text',b.name)+inp('b-o','Bank Opening (Rs)','number',b.opening)+inp('b-c','Cash Opening (Rs)','number',b.cashOpening)}</div>${btn('Update Balances','saveBank()')}`)+
+ `<div class="grid sm:grid-cols-2 gap-4 mb-5">${stat('Cash in Hand',k.cash,'green-600')+stat(esc(b.name),k.bank,'blue-900')}</div>`+
+ card('Bank se Cash Nikalna / Jama Karna',`<div class="grid md:grid-cols-4 gap-3 mb-3">${sel('bt-t','Kisam',[['withdraw','Bank se Cash Nikalna'],['deposit','Cash Bank mein Jama']])+inp('bt-a','Raqam (Rs)','number')+inp('bt-d','Tarikh','date',today())+inp('bt-n','Note / Cheque No.')}</div>${btn('Save Karein','addBankTx()','bg-green-600')}`)+
+ card('Bank & Cash Ledger',table(['Tarikh','Kisam','Details','Mode','In','Out','Action'],[['Opening','Opening Balance','-','Cash/Bank',R((+b.cashOpening||0)+(+b.opening||0)),'-','-'],...entries().map(e=>[e.d,e.t,esc(e.x),e.m,e.a>0?`<b class="text-green-700">${R(e.a)}</b>`:'-',e.a<0?`<b class="text-red-600">${R(-e.a)}</b>`:'-',acts(e.k,e.id)])]),prn)},
+
+ledgers(){return card('Customer se Payment Receive (Wasooli)',`<div class="grid md:grid-cols-4 gap-3 mb-3">${sel('l-c','Customer',[['','-- Chunein --'],...db.customers.map(c=>c.name)])+inp('l-a','Raqam','number')+sel('l-m','Mode',['Cash','Bank'])+inp('l-d','Tarikh','date',today())}</div>${btn('Payment Receive Save Karein','addCustPay()','bg-green-600')}`)+
+ card('Customer Ledger Sheet',srch()+table(['Customer','Phone','Opening','Sales','Paid','Baaki','Action'],db.customers.filter(c=>fq(c.name+(c.phone||''))).map(c=>{const t=custT(c.name);return[`<b>${esc(c.name)}</b>`,esc(c.phone||'-'),R(c.opening),R(t.sales),R(t.paid),`<b class="text-red-600">${R(c.opening+t.sales-t.paid)}</b>`,`<button class="bt bg-brand-600 text-white" onclick="stmt(${c.id})"><i class="fa-solid fa-file-lines"></i> Statement</button>`]})))+
+ card('Received Payments History',table(['Tarikh','Customer','Raqam','Mode','Action'],db.customerPayments.slice().reverse().map(p=>[p.date,esc(p.customerName),`<b>${R(p.amount)}</b>`,p.mode,acts('customerPayments',p.id)])))},
+
+tb(){const k=calc(),r=(n,t,d,c)=>[n,t,d==null?'-':R(d),c==null?'-':R(c)],
+ rows=[r('Cash in Hand','Asset',k.cash),r(`Bank (${esc(db.bankSettings.name)})`,'Asset',k.bank),r('Accounts Receivable','Asset',k.recv),r('Purchases','Expense',k.purch),r('Operating Expenses','Expense',k.exp),r('Accounts Payable','Liability',null,k.pay),r("Owner's Capital (Opening)",'Equity',null,k.cap),r('Sales Revenue','Revenue',null,k.sales)];
+ const D=k.cash+k.bank+k.recv+k.purch+k.exp,C=k.pay+k.cap+k.sales,ok=Math.abs(D-C)<1;
+ return card('Trial Balance Sheet',table(['Account','Type','Debit','Credit'],[...rows,['<b>Total</b>','',`<b>${R(D)}</b>`,`<b>${R(C)}</b>`]])+`<div class="mt-3 p-3 rounded-lg text-center font-bold text-sm ${ok?'bg-green-100 text-green-800':'bg-red-100 text-red-800'}">${ok?'Trial Balance Tally Ho Gaya':'Farq: '+R(Math.abs(D-C))}</div>`,prn)},
+
+bs(){const k=calc(),A=k.cash+k.bank+k.recv,L=k.pay+k.cap+k.profit,row=(a,b)=>`<div class="flex justify-between p-2 bg-white rounded shadow-sm text-sm"><span>${a}</span><b>${R(b)}</b></div>`;
+ return card('Balance Sheet',`<div class="grid md:grid-cols-2 gap-5"><div class="border border-green-200 rounded-xl p-4 bg-green-50/40 space-y-2"><h4 class="font-bold text-green-900">Assets</h4>${row('Cash in Hand',k.cash)+row('Bank Balance',k.bank)+row('Receivable (Customer Udhaar)',k.recv)}<div class="flex justify-between p-3 bg-green-800 text-white font-bold rounded-lg"><span>Total Assets</span><span>${R(A)}</span></div></div><div class="border border-blue-200 rounded-xl p-4 bg-blue-50/40 space-y-2"><h4 class="font-bold text-brand-700">Liabilities & Capital</h4>${row('Payable (Supplier Udhaar)',k.pay)+row('Opening Capital',k.cap)+row('Net Profit',k.profit)}<div class="flex justify-between p-3 bg-brand-600 text-white font-bold rounded-lg"><span>Total</span><span>${R(L)}</span></div></div></div>`,prn)},
+
+backup(){return card('Backup (Save File)',`<p class="text-sm text-gray-600 mb-3">Sara data aik file mein download karein.</p>${btn('Export Backup','exportData()','bg-green-600')}`)+card('Restore (Load File)',`<input type="file" id="imp" accept=".json" class="block mb-3 text-sm">${btn('Restore From File','importData()')}`)},
+
+users(){if(cur.role!=='Admin')return card('Ijazat nahi','Sirf Admin users manage kar sakta hai.');
+ return card('Naya Staff / User',`<div class="grid md:grid-cols-3 gap-3 mb-3">${inp('u-n','Username')+inp('u-p','Password','password')+sel('u-r','Role',['Staff','Admin'])}</div>${btn('User Add Karein','addUser()')}`)+
+ card('Users List',table(['Username','Role','Action'],db.users.map(u=>[`<b>${esc(u.username)}</b>`,u.role,acts('users',u.id)])))}
+};
+
+/* ---------- Bill / Quotation form (add + edit) ---------- */
+const newF=k=>({k,id:null,rows:[1,2,3].map(()=>({d:'',q:1,r:''})),cust:'',mode:'Cash',paid:'',exp:'',veh:'',note:''});
+function formTab(k){const q=k==='quotations',ch=k==='challans';if(!F||F.k!==k)F=newF(k);
+ const cs=[['','Walk-in Customer'],...db.customers.map(c=>[c.name,c.name])];if(F.cust&&!cs.some(c=>c[0]===F.cust))cs.push([F.cust,F.cust]);
+ return card(F.id?`Edit Kar Rahe Hain: #${F.id}`:ch?'Naya Delivery Challan':q?'Nayi Quotation':'Naya Bill / Invoice',
+ `<div class="grid md:grid-cols-3 gap-3 mb-3">${sel('f-c','Customer',cs,F.cust,'onchange="F.cust=this.value"')+(ch?inp('f-v','Gaari / Vehicle No.','text',F.veh,'oninput="F.veh=this.value"')+inp('f-n','Note','text',F.note,'oninput="F.note=this.value"'):q?inp('f-e','Valid Until','date',F.exp,'oninput="F.exp=this.value"'):sel('f-m','Payment Mode',[['Cash','Cash Counter'],['Bank','Bank Account'],['Credit','Credit (Udhaar)']],F.mode,'onchange="F.mode=this.value"')+inp('f-p','Jamashuda (Paid)','number',F.paid,'oninput="F.paid=this.value"'))}</div>
+ <div class="grid grid-cols-12 gap-1 font-bold bg-gray-50 p-2 rounded text-xs"><span class="col-span-1 text-center">#</span>${ch?'<span class="col-span-8">Item</span><span class="col-span-2">Qty</span>':'<span class="col-span-5">Item</span><span class="col-span-2">Qty</span><span class="col-span-2">Rate</span><span class="col-span-2 text-right">Amount</span>'}</div>
+ <div id="rows" class="mt-2">${rowsH()}</div>
+ <div class="flex flex-col sm:flex-row justify-between items-center gap-3 my-4"><button class="bt bg-amber-500 text-gray-900 !py-2" onclick="addRow()">+ Item Line</button><b class="${ch?'hidden':''} bg-gray-100 px-4 py-2 rounded-lg text-brand-700">Grand Total: <span id="gt">${R(F.rows.reduce((s,r)=>s+r.q*r.r,0))}</span></b></div>
+ <div class="flex gap-2">${btn(F.id?'Update Karein':ch?'Challan Save Karein':q?'Quotation Save Karein':'Bill Save Karein','saveForm()','bg-green-600')}${F.id?`<button class="bt bg-gray-200" onclick="F=null;render()">Edit Cancel</button>`:''}</div>`)}
+const rowsH=()=>{const ch=F.k==='challans';return F.rows.map((r,i)=>`<div class="grid grid-cols-12 gap-1 items-center mb-1"><span class="col-span-1 text-center text-xs">${i+1}</span><input class="ip !p-1.5 ${ch?'col-span-8':'col-span-5'}" placeholder="Item description" value="${esc(r.d)}" oninput="F.rows[${i}].d=this.value"><input type="number" class="ip !p-1.5 col-span-2" value="${r.q}" oninput="rw(${i},'q',this.value)">${ch?'':`<input type="number" class="ip !p-1.5 col-span-2" value="${r.r}" oninput="rw(${i},'r',this.value)">`}<b class="${ch?'hidden ':''}col-span-1 text-xs text-right" id="am${i}">${R(r.q*r.r)}</b><button class="col-span-1 text-red-500" onclick="F.rows.splice(${i},1);$('rows').innerHTML=rowsH();tot()"><i class="fa-solid fa-xmark"></i></button></div>`).join('')};
+function rw(i,f,v){F.rows[i][f]=v;$('am'+i).innerText=R(F.rows[i].q*F.rows[i].r);tot()}
+const tot=()=>$('gt').innerText=R(F.rows.reduce((s,r)=>s+r.q*r.r,0));
+function addRow(){if(F.rows.length>=10)return alert('Max 10 lines');F.rows.push({d:'',q:1,r:''});$('rows').innerHTML=rowsH()}
+function saveForm(){const k=F.k,q=k==='quotations',ch=k==='challans';
+ const items=F.rows.filter(r=>r.d.trim()&&+r.q>0).map(r=>({desc:r.d.trim(),qty:+r.q,rate:+r.r||0,amt:+r.q*(+r.r||0)}));
+ if(!items.length)return alert('Kam az kam aik valid item darj karein!');
+ const base={customerName:F.cust||'Walk-in Customer',items,grandTotal:items.reduce((s,i)=>s+i.amt,0)};
+ if(ch){base.vehicle=F.veh.trim();base.note=F.note.trim()}else if(q)base.expiryDate=F.exp||today();else{base.mode=F.mode;base.paid=+F.paid||0}
+ let rec;if(F.id){rec=db[k].find(x=>x.id==F.id);Object.assign(rec,base)}else{rec={id:uid(),date:today(),...base,...(ch?{no:db.challans.reduce((m,x)=>Math.max(m,x.no||0),0)+1}:{})};db[k].push(rec)}
+ F=null;commit();ch?challan('challans',rec.id):q?quotModal(rec):invModal(rec)}
+function toSale(id,c='quotations'){const q=db[c].find(x=>x.id==id);F={...newF('sales'),rows:q.items.map(i=>({d:i.desc,q:i.qty,r:i.rate})),cust:q.customerName==='Walk-in Customer'?'':q.customerName};go('sales')}
+
+/* ---------- Generic Edit / Delete ---------- */
+const MODES=()=>['Cash','Bank'],CUST=()=>db.customers.map(c=>c.name);
+const FD={
+customers:[['name','Naam'],['phone','Phone'],['opening','Opening Balance','number']],
+expenses:[['date','Tarikh','date'],['category','Category','sel',()=>db.expenseCategories],['desc','Tafseel'],['amount','Raqam','number'],['mode','Mode','sel',MODES]],
+customerPayments:[['date','Tarikh','date'],['customerName','Customer','sel',CUST],['amount','Raqam','number'],['mode','Mode','sel',MODES]],
+supplierPayments:[['date','Tarikh','date'],['supplier','Supplier'],['amount','Raqam','number'],['mode','Mode','sel',MODES]],
+purchases:[['date','Tarikh','date'],['supplier','Supplier'],['item','Material'],['qty','Qty','number'],['rate','Rate','number'],['mode','Mode','sel',()=>['Cash','Bank','Credit']]],
+bankTransfers:[['date','Tarikh','date'],['dir','Kisam','sel',()=>[['withdraw','Bank se Cash Nikalna'],['deposit','Cash Bank mein Jama']]],['amount','Raqam','number'],['note','Note / Cheque No.']],
+users:[['username','Username'],['role','Role','sel',()=>['Staff','Admin']],['newpass','Naya Password (khali = na badlein)','password']]};
+function loadForm(c,id){const r=db[c].find(x=>x.id==id);
+ F={k:c,id:r.id,rows:r.items.map(i=>({d:i.desc,q:i.qty,r:i.rate})),cust:r.customerName==='Walk-in Customer'?'':r.customerName,mode:r.mode||'Cash',paid:r.paid||'',exp:r.expiryDate||'',veh:r.vehicle||'',note:r.note||''};go(c)}
+function edit(c,id){if(c==='sales'||c==='quotations'||c==='challans')return loadForm(c,id);
+ const r=db[c].find(x=>x.id==id);
+ modal(`<h3 class="font-bold mb-3 text-brand-700">Record Edit Karein</h3><div class="grid sm:grid-cols-2 gap-3">${FD[c].map(([k,l,t,o])=>t==='sel'?sel('e-'+k,l,o(),r[k]):inp('e-'+k,l,t||'text',t==='password'?'':r[k]??'')).join('')}</div><div class="flex gap-2 mt-4 justify-end"><button class="bt bg-gray-200" onclick="closeModal()">Cancel</button>${btn('Update Karein',`saveEdit('${c}',${id})`)}</div>`)}
+async function saveEdit(c,id){const r=db[c].find(x=>x.id==id),old={...r};
+ for(const[k,,t]of FD[c]){const v=val('e-'+k);if(k==='newpass'){if(v)r.h=await hash(v);continue}r[k]=t==='number'?+v||0:v}
+ if(c==='purchases')r.amount=r.qty*r.rate;
+ if(c==='customers'){if(!r.name.trim()||db.customers.some(x=>x.id!==r.id&&x.name===r.name)){Object.assign(r,old);return alert('Naam khali ya pehle se maujood hai!')}
+  if(r.name!==old.name)['sales','quotations','customerPayments'].forEach(t=>db[t].forEach(x=>{if(x.customerName===old.name)x.customerName=r.name}))}
+ if(c==='users'){if(!r.username.trim()||db.users.some(x=>x.id!==r.id&&x.username===r.username)){Object.assign(r,old);return alert('Username khali ya pehle se maujood hai!')}
+  if(cur.id===r.id){cur=r;localStorage.pp_user=r.username;$('ub').innerText=`${r.role} (${r.username})`}}
+ closeModal();commit()}
+function del(c,id){
+ if(c==='users'){const u=db.users.find(x=>x.id==id);if(u.username==='admin'||u.id===cur.id)return alert('Ye user delete nahi ho sakta!')}
+ if(!confirm('Kya aap waqai ye record delete karna chahte hain?'))return;
+ db[c]=db[c].filter(x=>x.id!=id);if(F&&F.id==id)F=null;commit()}
+
+/* ---------- Add actions ---------- */
+function addCust(){const name=val('c-n').trim();if(!name)return alert('Customer ka naam lazmi hai!');
+ if(db.customers.some(c=>c.name===name))return alert('Ye customer pehle se maujood hai!');
+ db.customers.push({id:uid(),name,phone:val('c-p').trim(),opening:+val('c-o')||0});commit()}
+function addPurch(){const supplier=val('p-s').trim(),item=val('p-i').trim(),qty=+val('p-q')||0,rate=+val('p-r')||0,amount=qty*rate;
+ if(!supplier||!item||amount<=0)return alert('Tamam fields theek se bharein!');
+ db.purchases.push({id:uid(),date:val('p-d')||today(),supplier,item,qty,rate,amount,mode:val('p-m')});commit()}
+function addSupPay(){const supplier=val('s-s'),amount=+val('s-a')||0;if(!supplier||amount<=0)return alert('Supplier aur raqam darj karein!');
+ db.supplierPayments.push({id:uid(),date:val('s-d')||today(),supplier,amount,mode:val('s-m')});commit()}
+function addExp(){const category=val('x-c'),amount=+val('x-a')||0;if(!category||amount<=0)return alert('Category aur raqam dein!');
+ db.expenses.push({id:uid(),date:val('x-t')||today(),category,desc:val('x-d').trim(),amount,mode:val('x-m')});commit()}
+function addCustPay(){const customerName=val('l-c'),amount=+val('l-a')||0;if(!customerName||amount<=0)return alert('Customer aur raqam darj karein!');
+ db.customerPayments.push({id:uid(),date:val('l-d')||today(),customerName,amount,mode:val('l-m')});commit()}
+function addCat(){const n=val('nc').trim();if(!n||db.expenseCategories.includes(n))return alert('Sahi aur naya naam dein!');db.expenseCategories.push(n);commit()}
+function editCat(i){const o=db.expenseCategories[i],n=(prompt('Naya naam:',o)||'').trim();if(!n||n===o)return;
+ if(db.expenseCategories.includes(n))return alert('Ye naam pehle se hai!');
+ db.expenseCategories[i]=n;db.expenses.forEach(e=>{if(e.category===o)e.category=n});commit()}
+function delCat(i){const o=db.expenseCategories[i];if(db.expenses.some(e=>e.category===o))return alert('Is folder mein expenses hain, pehle woh delete ya edit karein.');
+ if(confirm('Folder delete karein?')){db.expenseCategories.splice(i,1);commit()}}
+function addBankTx(){const amount=+val('bt-a')||0,dir=val('bt-t');if(amount<=0)return alert('Sahi raqam darj karein!');
+ const k=calc();if(dir==='withdraw'&&amount>k.bank&&!confirm('Bank balance ('+R(k.bank)+') se zyada raqam hai. Phir bhi save karein?'))return;
+ if(dir==='deposit'&&amount>k.cash&&!confirm('Cash in hand ('+R(k.cash)+') se zyada raqam hai. Phir bhi save karein?'))return;
+ db.bankTransfers.push({id:uid(),date:val('bt-d')||today(),dir,amount,note:val('bt-n').trim()});commit()}
+function saveBank(){Object.assign(db.bankSettings,{name:val('b-n').trim(),opening:+val('b-o')||0,cashOpening:+val('b-c')||0});commit()}
+async function addUser(){const username=val('u-n').trim(),p=val('u-p').trim();if(!username||!p)return alert('Username aur Password dein!');
+ if(db.users.some(u=>u.username===username))return alert('Username pehle se maujood hai!');
+ db.users.push({id:uid(),username,h:await hash(p),role:val('u-r')});commit()}
+
+/* ---------- Documents ---------- */
+function invModal(s){A=s;modal(hdr('INVOICE',`Invoice #${s.id}<br>Date: ${s.date}`)+`<div class="bg-gray-50 p-3 rounded mb-3 text-sm"><b>Customer:</b> ${esc(s.customerName)}<br><b>Mode:</b> ${s.mode}</div>`+itemsT(s.items)+`<div class="text-right text-sm mt-3">Grand Total: <b>${R(s.grandTotal)}</b><br>Paid: <b class="text-green-600">${R(s.paid)}</b><br>Baaki: <b class="text-red-600">${R(s.grandTotal-s.paid)}</b></div>`+btns(`<button class="bt bg-[#25D366] text-white" onclick="wa()"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button><button class="bt bg-teal-600 text-white" onclick="challan('sales',${s.id})"><i class="fa-solid fa-truck-fast"></i> Challan</button>`))}
+function challan(c,id){const r=db[c].find(x=>x.id==id),cu=db.customers.find(x=>x.name===r.customerName);
+ modal(hdr('DELIVERY CHALLAN',`Challan #${r.no||r.id}<br>Date: ${r.date}`)+`<div class="bg-gray-50 p-3 rounded mb-3 text-sm"><b>Customer:</b> ${esc(r.customerName)}${cu&&cu.phone?'<br><b>Phone:</b> '+esc(cu.phone):''}${r.vehicle?'<br><b>Gaari No:</b> '+esc(r.vehicle):''}${r.note?'<br><b>Note:</b> '+esc(r.note):''}</div>`+
+ table(['#','Item / Description','Qty'],r.items.map((x,n)=>[n+1,esc(x.desc),`<b>${x.qty}</b>`]))+
+ `<p class="text-xs text-slate-500 mt-3">Maal theek halat mein aur poori miqdar mein wasool kiya gaya.</p><div class="grid grid-cols-2 gap-10 mt-14 text-center text-xs text-slate-600"><div class="border-t border-slate-400 pt-1">Receiver's Name &amp; Signature</div><div class="border-t border-slate-400 pt-1">Authorized Signature (PP Printers)</div></div>`+btns())}
+function quotModal(q){modal(hdr('QUOTATION',`Quot #${q.id}<br>Date: ${q.date}<br>Valid Till: ${q.expiryDate}`)+`<div class="bg-gray-50 p-3 rounded mb-3 text-sm"><b>Customer:</b> ${esc(q.customerName)}</div>`+itemsT(q.items)+`<div class="text-right mt-3">Grand Total: <b class="text-brand-700">${R(q.grandTotal)}</b></div>`+btns())}
+function voucher(id){const e=db.expenses.find(x=>x.id==id);modal(hdr('VOUCHER',e.date)+`<div class="text-sm space-y-2 bg-gray-50 p-4 rounded"><div><b>Category:</b> ${esc(e.category)}</div><div><b>Tafseel:</b> ${esc(e.desc||'-')}</div><div><b>Mode:</b> ${e.mode}</div><div class="font-bold text-brand-700 border-t pt-2">Amount: ${R(e.amount)}</div></div>`+btns())}
+function stmt(id){const c=db.customers.find(x=>x.id==id);let bal=+c.opening||0;
+ const ev=[...db.sales.filter(s=>s.customerName===c.name).flatMap(s=>[{d:s.date,x:`Invoice #${s.id}`,dr:s.grandTotal,cr:0},...(s.paid?[{d:s.date,x:`Invoice #${s.id} - Paid (${s.mode==='Bank'?'Bank':'Cash'})`,dr:0,cr:s.paid}]:[])]),...db.customerPayments.filter(p=>p.customerName===c.name).map(p=>({d:p.date,x:`Payment Received (${p.mode})`,dr:0,cr:p.amount}))].sort((a,b)=>a.d.localeCompare(b.d));
+ modal(hdr('ACCOUNT STATEMENT',today())+`<div class="bg-blue-50 p-3 rounded mb-3 text-sm"><b>${esc(c.name)}</b> | ${esc(c.phone||'-')} | Opening: ${R(c.opening)}</div>`+table(['Tarikh','Tafseel','Debit','Credit','Balance'],[['-','Opening Balance','-','-',`<b>${R(bal)}</b>`],...ev.map(e=>{bal+=e.dr-e.cr;return[e.d,esc(e.x),e.dr?R(e.dr):'-',e.cr?R(e.cr):'-',`<b class="text-red-600">${R(bal)}</b>`]})])+btns())}
+function wa(){const c=db.customers.find(x=>x.name===A.customerName);let ph=String(c&&c.phone||prompt('WhatsApp number (923XXXXXXXXX):')||'').replace(/\D/g,'');if(!ph)return;if(ph[0]==='0')ph='92'+ph.slice(1);
+ open(`https://wa.me/${ph}?text=${encodeURIComponent(`*PP PRINTER & ADVERTISING*\nInvoice #${A.id}\nCustomer: ${A.customerName}\nTotal: Rs ${A.grandTotal}\nPaid: Rs ${A.paid}\nBaaki: Rs ${A.grandTotal-A.paid}\nShukriya!`)}`,'_blank')}
+
+/* ---------- Backup ---------- */
+function exportData(){const a=document.createElement('a');a.href='data:text/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(db));a.download=`PP_Printers_Backup_${today()}.json`;a.click()}
+function importData(){const f=$('imp').files[0];if(!f)return alert('Pehle backup file select karein!');
+ const r=new FileReader();r.onload=async e=>{try{const d=JSON.parse(e.target.result);if(!Array.isArray(d.sales)||!d.bankSettings)throw 0;
+  if(!confirm('Maujooda data replace ho jayega. Jari rakhein?'))return;await load(d);save();alert('Data restore ho gaya!')}catch(x){alert('Invalid backup file!')}};r.readAsText(f)}
+</script>
+
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import{getFirestore,doc,setDoc,onSnapshot}from"https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+const app=initializeApp({apiKey:"AIzaSyDmuE4Y1paxQkg3op4cUFb33IEARJczBik",authDomain:"pprinterinventyerp.firebaseapp.com",projectId:"pprinterinventyerp",storageBucket:"pprinterinventyerp.firebasestorage.app",messagingSenderId:"1029995799509",appId:"1:1029995799509:web:a171b509fec7215af8935c",measurementId:"G-7QHPRFYM63"});
+window.fb={ref:doc(getFirestore(app),"pp_printers_store","main_database"),setDoc,onSnapshot};
+window.dispatchEvent(new Event('fbready'));
+</script>
+</body>
+</html>
