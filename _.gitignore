@@ -1,0 +1,6 @@
+.idea
+.vscode
+.DS_Store
+node_modules
+*.log
+PP_Printers_Backup_*.json

@@ -1,8 +1,3 @@
- ### Code of Conduct
+# Code of Conduct
 
- We do not accept contributions written by AI, such contributions will
- be closed without discussion or review.
-
- We are not here to argue with you. If you are argumentative, abusive,
- lie or misrepresent your service or are otherwise anti-social we will
- block you.
+Is project mein sab se izzat aur tameez se baat karein. Bad-tameezi, harassment, jhoot ya doosron ka data bila ijazat share karna bardasht nahi kiya jaye ga. Aisi harkat par comments/PR band kiye ja sakte hain aur account block kiya ja sakta hai.
